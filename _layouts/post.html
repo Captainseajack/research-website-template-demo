@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="page-hero compact-hero"><div class="shell">
+  <a class="eyebrow breadcrumb" href="{{ '/journal/' | relative_url }}"><span aria-hidden="true">←</span> RESEARCH JOURNAL</a>
+  <div class="detail-head">
+    <div class="detail-main">
+      <div class="detail-meta">{{ page.date | date: "%B %-d, %Y" }} {% if page.category %}<span class="meta-divider">/</span> {{ page.category | escape }}{% endif %}</div>
+      <h1>{{ page.title | escape }}</h1>
+      {% if page.summary %}<p class="lead">{{ page.summary | escape }}</p>{% endif %}
+      {% if page.tags.size > 0 %}<div class="tag-row">{% for tag in page.tags %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</div>{% endif %}
+    </div>
+    <div class="detail-stamp"><span class="stamp-icon">↗</span><span>FIELD NOTE <b>{{ page.date | date: '%Y.%m.%d' }}</b></span></div>
+  </div>
+</div></div>
+<div class="shell article-layout">
+  <article class="prose content-paper">{{ content }}
+  {% if page.x_post and page.x_post != "" %}{% include x-post.html url=page.x_post %}{% endif %}</article>
+  <aside class="article-side"><div class="sticky-card"><span class="eyebrow">RESEARCH RECORD</span><p>Research notes are working material, not necessarily final conclusions.</p><a class="arrow-link" href="{{ '/conclusions/' | relative_url }}">Read current conclusions <span aria-hidden="true">↗</span></a><a class="arrow-link" href="{{ '/revisions/' | relative_url }}">Revision history <span aria-hidden="true">↗</span></a></div></aside>
+</div>
+<div class="shell back-link"><a class="button button-secondary" href="{{ '/journal/' | relative_url }}">← All journal entries</a></div>

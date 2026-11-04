@@ -1,0 +1,27 @@
+THE RESEARCH LEDGER - START HERE
+================================
+
+This is a complete Jekyll / GitHub Pages research website template.
+You do not need to install a coding program to publish it.
+
+1. Right-click the ZIP you downloaded and choose Extract All.
+2. At github.com, make a NEW PUBLIC repository.
+3. In the new repository select Add file > Upload files.
+4. Open the extracted folder and drag ALL contents (files and folders)
+   into GitHub's upload screen. Commit changes. Do not upload the ZIP.
+5. In the repository select Settings > Pages.
+6. Select Deploy from a branch > main > /(root) > Save.
+7. Open _config.yml and set url and baseurl for your repository:
+
+   url: "https://YOUR-USERNAME.github.io"
+   baseurl: "/YOUR-REPOSITORY"
+
+8. Edit the title and other details in _config.yml.
+9. Edit conclusions.md, methodology.md, and revisions.md.
+10. Replace the sample files inside _posts/ and _sources/.
+11. Change demo: true to demo: false when ready.
+
+For adding journal entries, X posts, and source records, open
+START-HERE.md or README.md (GitHub displays these as formatted instructions).
+
+The full guide also explains custom domains and troubleshooting.

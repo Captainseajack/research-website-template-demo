@@ -1,0 +1,21 @@
+---
+layout: default
+title: Research Journal
+description: Ongoing research updates, discoveries, developing questions, and source notes.
+permalink: /journal/
+---
+<div class="page-hero"><div class="shell page-hero-inner"><div><span class="eyebrow"><span class="mini-rule"></span> RESEARCH REPORT / 03</span><h1>The research <em>journal.</em></h1><p class="lead">A chronological working log: discoveries, useful links, new documents, and changing interpretations.</p></div><div class="page-hero-sticker">FIELD<br>NOTES <span>↗</span></div></div></div>
+<div class="shell section-space journal-section">
+  <div class="section-topline"><span class="eyebrow">{{ site.posts.size }} RESEARCH UPDATES</span><span class="line-grow"></span><span class="index-caption">NEWEST FIRST</span></div>
+  <div class="journal-filter" data-filter-scope="journal"><label class="search-field"><span class="visually-hidden">Search journal entries</span><span class="search-glass" aria-hidden="true">⌕</span><input type="search" data-search-input placeholder="Search journal entries…" autocomplete="off"></label><p class="filter-status" aria-live="polite"><span data-count>{{ site.posts.size }}</span> entries shown</p>
+    <div class="journal-list" data-items>
+      {% for post in site.posts %}
+      {% assign journal_tags = post.tags | join: ' ' %}
+      <a class="journal-entry" href="{{ post.url | relative_url }}" data-item data-search="{{ post.title | append: ' ' | append: post.summary | append: ' ' | append: journal_tags | downcase | escape }}">
+        <div class="journal-date"><strong>{{ post.date | date: '%d' }}</strong><span>{{ post.date | date: '%b' | upcase }}</span><small>{{ post.date | date: '%Y' }}</small></div>
+        <div class="journal-entry-main"><div class="detail-meta">{{ post.category | default: 'RESEARCH NOTE' | upcase | escape }}</div><h2>{{ post.title | escape }}</h2><p>{{ post.summary | default: post.excerpt | strip_html | truncate: 165 | escape }}</p>{% if post.tags.size > 0 %}<div class="tag-row">{% for tag in post.tags limit:4 %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</div>{% endif %}</div><div class="journal-arrow" aria-hidden="true">↗</div>
+      </a>
+      {% endfor %}
+    </div><p class="empty-state" data-empty hidden>No journal entries match your search.</p>
+  </div>
+</div>

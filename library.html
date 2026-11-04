@@ -1,0 +1,30 @@
+---
+layout: default
+title: Source Library
+description: Explore source documents, reporting, analysis, and related research notes.
+permalink: /library/
+---
+<div class="page-hero"><div class="shell page-hero-inner"><div><span class="eyebrow"><span class="mini-rule"></span> RESEARCH REPORT / 02</span><h1>The source <em>library.</em></h1><p class="lead">The materials behind the analysis. Explore each record for context, observations, and limitations.</p></div><div class="page-hero-sticker">SOURCE<br>INDEX <span>≡</span></div></div></div>
+<div class="shell section-space library-section">
+  <div class="section-topline"><span class="eyebrow">{{ site.sources.size }} CATALOGED RECORDS</span><span class="line-grow"></span><span class="index-caption">SEARCHABLE INDEX</span></div>
+  <div class="filter-bar" data-filter-scope="source">
+    <label class="search-field"><span class="visually-hidden">Search sources</span><span class="search-glass" aria-hidden="true">⌕</span><input type="search" data-search-input placeholder="Search titles, descriptions, tags…" autocomplete="off"></label>
+    <div class="filter-chips" aria-label="Filter by source type"><button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All records</button><button type="button" class="chip" data-filter="primary" aria-pressed="false">Primary documents</button><button type="button" class="chip" data-filter="reporting" aria-pressed="false">Reporting</button><button type="button" class="chip" data-filter="analysis" aria-pressed="false">Analysis</button><button type="button" class="chip" data-filter="other" aria-pressed="false">Other</button></div>
+    <p class="filter-status" aria-live="polite"><span data-count>{{ site.sources.size }}</span> records shown</p>
+  </div>
+  {% assign sources_sorted = site.sources | sort: 'added' | reverse %}
+  <div class="library-grid" data-items>
+    {% for source in sources_sorted %}
+    {% assign source_tags = source.tags | join: ' ' %}
+    <a class="source-card" href="{{ source.url | relative_url }}" data-item data-category="{{ source.type | default: 'other' | escape }}" data-search="{{ source.title | append: ' ' | append: source.summary | append: ' ' | append: source.creator | append: ' ' | append: source_tags | downcase | escape }}">
+      <div class="source-card-top"><span class="source-type">{{ source.kind | default: 'OTHER' | upcase | escape }}</span><span class="source-card-plus" aria-hidden="true">↗</span></div>
+      <h2>{{ source.title | escape }}</h2>
+      <p>{{ source.summary | escape }}</p>
+      {% if source.tags.size > 0 %}<div class="tag-row">{% for tag in source.tags limit:3 %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</div>{% endif %}
+      <div class="source-card-bottom"><span>ADDED {{ source.added | date: '%d %b %Y' | upcase }}</span><strong>RESEARCH NOTES <span aria-hidden="true">→</span></strong></div>
+    </a>
+    {% endfor %}
+  </div>
+  <p class="empty-state" data-empty hidden>No matching records. Try a different search or source type.</p>
+  <div class="archive-help"><strong>Adding a new source?</strong><p>Each record is a small Markdown file under <code>_sources/</code>. Create a copy of an example, change its title and notes, and GitHub Pages updates the index automatically.</p></div>
+</div>

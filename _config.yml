@@ -1,0 +1,48 @@
+# START HERE: Customize these lines for each issue-focused research website.
+title: "The Research Ledger"
+short_title: "Research Ledger"
+tagline: "A public record of questions, evidence, and conclusions."
+topic: "A case study in public policy"
+author: "Your name"
+description: "Independent research, a documented source library, and an open revision history."
+
+# Keep demo: true until you've replaced the example content.
+demo: true
+
+# URL SETTINGS:
+# With a purchased custom domain (e.g. research-example.org):
+#   url: "https://research-example.org"
+#   baseurl: ""
+# With only the free GitHub Pages address username.github.io/repo-name:
+#   url: "https://username.github.io"
+#   baseurl: "/repo-name"
+url: "https://captainseajack.github.io"
+baseurl: "/research-website-template-demo"
+
+markdown: kramdown
+permalink: /journal/:year/:month/:day/:title/
+timezone: America/Chicago
+
+collections:
+  sources:
+    output: true
+    permalink: /sources/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: sources
+    values:
+      layout: source
+
+exclude:
+  - README.md
+  - START-HERE.md
+  - LICENSE
+  - .gitignore
+  - templates
