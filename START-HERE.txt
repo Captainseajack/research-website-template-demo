@@ -1,27 +1,24 @@
-THE RESEARCH LEDGER - START HERE
-================================
+RESEARCH ARTICLE TEMPLATE - START HERE
+======================================
 
-This is a complete Jekyll / GitHub Pages research website template.
-You do not need to install a coding program to publish it.
+The site has four visitor pages:
 
-1. Right-click the ZIP you downloaded and choose Extract All.
-2. At github.com, make a NEW PUBLIC repository.
-3. In the new repository select Add file > Upload files.
-4. Open the extracted folder and drag ALL contents (files and folders)
-   into GitHub's upload screen. Commit changes. Do not upload the ZIP.
-5. In the repository select Settings > Pages.
-6. Select Deploy from a branch > main > /(root) > Save.
-7. Open _config.yml and set url and baseurl for your repository:
+1. Topic brief: /
+2. Full research: /research/
+3. Sources: /sources/
+4. Post-publication additions: /updates/
 
-   url: "https://YOUR-USERNAME.github.io"
-   baseurl: "/YOUR-REPOSITORY"
+Edit _config.yml for the site title, topic, headline, author, dates,
+and GitHub Pages URL.
 
-8. Edit the title and other details in _config.yml.
-9. Edit conclusions.md, methodology.md, and revisions.md.
-10. Replace the sample files inside _posts/ and _sources/.
-11. Change demo: true to demo: false when ready.
+Edit index.html for the short article.
+Edit research.md for the full article.
 
-For adding journal entries, X posts, and source records, open
-START-HERE.md or README.md (GitHub displays these as formatted instructions).
+To add a source, copy templates/NEW-SOURCE.md into _sources/ and
+rename it. Set post_publication: true when the source was found after
+the article was published. It then appears automatically on Updates.
 
-The full guide also explains custom domains and troubleshooting.
+Commentary is optional. Leave commentary: "" and the website shows no
+commentary heading or empty space.
+
+Read START-HERE.md for complete instructions.

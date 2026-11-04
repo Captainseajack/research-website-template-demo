@@ -1,0 +1,16 @@
+---
+layout: default
+title: Post-Publication Updates
+description: Sources and materials added after the original research was published.
+permalink: /updates/
+---
+{% assign updates = site.sources | where: 'post_publication', true | sort: 'added' | reverse %}
+<div class="shell listing-page">
+  <header class="listing-header"><p class="kicker">CONTINUING RESEARCH</p><h1>Added since publication</h1><p class="dek">New sources and materials discovered after the original article was published. An addition does not automatically change the article’s conclusions.</p><div class="listing-count">{{ updates.size }} addition{% unless updates.size == 1 %}s{% endunless %}</div></header>
+  <div class="update-timeline">
+    {% for source in updates %}
+    <article class="update-entry"><time datetime="{{ source.added | date: '%Y-%m-%d' }}">{{ source.added | date: '%B %-d, %Y' }}</time><div><span class="source-kind">{{ source.kind | default: 'Source' | escape }}</span><h2>{% if source.source_url and source.source_url != '' %}<a href="{{ source.source_url | escape }}" target="_blank" rel="noopener noreferrer">{{ source.title | escape }} ↗</a>{% else %}{{ source.title | escape }}{% endif %}</h2>{% if source.creator %}<p class="source-meta">{{ source.creator | escape }}</p>{% endif %}{% if source.commentary and source.commentary != '' %}<div class="source-commentary"><strong>Commentary</strong>{{ source.commentary | markdownify }}</div>{% endif %}</div></article>
+    {% else %}<p class="empty-message">No post-publication sources have been added yet.</p>{% endfor %}
+  </div>
+  <p class="record-link">Every addition also appears in the <a href="{{ '/sources/' | relative_url }}">complete source record</a>.</p>
+</div>

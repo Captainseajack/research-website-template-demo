@@ -1,0 +1,25 @@
+---
+layout: default
+title: Sources & Materials
+description: The complete source record behind this research.
+permalink: /sources/
+---
+{% assign sources_sorted = site.sources | sort: 'added' | reverse %}
+<div class="shell listing-page">
+  <header class="listing-header"><p class="kicker">SOURCE RECORD</p><h1>Sources & materials</h1><p class="dek">The documents, reporting, data, and analysis used in this research. Commentary appears only when the author has added it.</p><div class="listing-count">{{ site.sources.size }} source{% unless site.sources.size == 1 %}s{% endunless %}</div></header>
+  <div class="source-list">
+    {% for source in sources_sorted %}
+    <article class="source-entry">
+      <div class="source-date"><span>Added</span><time datetime="{{ source.added | date: '%Y-%m-%d' }}">{{ source.added | date: '%b %-d, %Y' }}</time></div>
+      <div class="source-main">
+        <div class="source-labels"><span>{{ source.kind | default: 'Source' | escape }}</span>{% if source.post_publication %}<span class="new-label">Added after publication</span>{% endif %}</div>
+        <h2>{% if source.source_url and source.source_url != '' %}<a href="{{ source.source_url | escape }}" target="_blank" rel="noopener noreferrer">{{ source.title | escape }} <span aria-hidden="true">↗</span></a>{% else %}{{ source.title | escape }}{% endif %}</h2>
+        {% if source.creator or source.source_date %}<p class="source-meta">{% if source.creator %}{{ source.creator | escape }}{% endif %}{% if source.creator and source.source_date %} · {% endif %}{% if source.source_date %}Published {{ source.source_date | date: '%B %-d, %Y' }}{% endif %}</p>{% endif %}
+        {% if source.summary and source.summary != '' %}<p class="source-summary">{{ source.summary | escape }}</p>{% endif %}
+        {% if source.commentary and source.commentary != '' %}<div class="source-commentary"><strong>Commentary</strong>{{ source.commentary | markdownify }}</div>{% endif %}
+        {% if source.archive_url and source.archive_url != '' %}<a class="archive-link" href="{{ source.archive_url | escape }}" target="_blank" rel="noopener noreferrer">Archived copy ↗</a>{% endif %}
+      </div>
+    </article>
+    {% else %}<p class="empty-message">No sources have been added yet.</p>{% endfor %}
+  </div>
+</div>

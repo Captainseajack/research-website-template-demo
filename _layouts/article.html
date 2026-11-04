@@ -1,12 +1,7 @@
 ---
 layout: default
 ---
-<div class="page-hero"><div class="shell page-hero-inner"><div>
-  <span class="eyebrow"><span class="mini-rule"></span> {{ page.kicker | escape }}</span>
-  <h1>{{ page.heading_start | escape }} <em>{{ page.heading_em | escape }}</em></h1>
-  {% if page.lead %}<p class="lead">{{ page.lead | escape }}</p>{% endif %}
-</div><div class="page-hero-sticker">{{ page.sticker_primary | escape }}<br>{{ page.sticker_secondary | escape }} <span aria-hidden="true">{{ page.sticker_icon | default: '↗' }}</span></div></div></div>
-<div class="shell article-layout">
-  <article class="content-paper prose">{{ content }}</article>
-  <aside class="article-side"><div class="sticky-card"><span class="eyebrow">EXPLORE THE ARCHIVE</span><p>Trace the documents, read the updates, and follow any changes to the main findings.</p><a class="arrow-link" href="{{ '/conclusions/' | relative_url }}">Current conclusions ↗</a><a class="arrow-link" href="{{ '/library/' | relative_url }}">Source library ↗</a><a class="arrow-link" href="{{ '/journal/' | relative_url }}">Research journal ↗</a><a class="arrow-link" href="{{ '/revisions/' | relative_url }}">Revision history ↗</a></div></aside>
-</div>
+<article class="shell article-page">
+  <header class="article-header"><p class="kicker">{{ page.kicker | default: 'IN-DEPTH RESEARCH' | escape }}</p><h1>{% if page.use_site_headline %}{{ site.headline | escape }}{% else %}{{ page.title | escape }}{% endif %}</h1>{% if page.description %}<p class="dek">{{ page.description | escape }}</p>{% endif %}<div class="byline">By {{ site.author | escape }} <span>·</span> Updated {{ site.last_updated | date: '%B %-d, %Y' }}</div></header>
+  <div class="article-grid"><div class="prose">{{ content }}</div><aside class="article-rail" aria-label="Research navigation"><strong>Research record</strong><a href="{{ '/' | relative_url }}">Topic brief</a><a href="{{ '/sources/' | relative_url }}">All sources</a><a href="{{ '/updates/' | relative_url }}">Post-publication additions</a></aside></div>
+</article>

@@ -9,7 +9,6 @@
   {% if site.url != "" %}<link rel="canonical" href="{{ page.url | absolute_url }}">{% endif %}
   <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <script defer src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -18,36 +17,19 @@
   {% endif %}
 
   <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }} home">
-        <span class="brand-mark" aria-hidden="true">R<span class="brand-mark-dot">.</span></span>
-        <span class="brand-text"><strong>{{ site.short_title | escape }}</strong><small>INDEPENDENT RESEARCH ARCHIVE</small></span>
-      </a>
+    <div class="shell masthead">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }} home"><span class="brand-mark" aria-hidden="true">R</span><span>{{ site.short_title | escape }}</span></a>
       <nav class="main-nav" aria-label="Primary navigation">
-        <a {% if page.url == '/' %}aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
-        <a {% if page.url == '/conclusions/' %}aria-current="page"{% endif %} href="{{ '/conclusions/' | relative_url }}">Conclusions</a>
-        <a {% if page.url == '/library/' or page.collection == 'sources' %}aria-current="page"{% endif %} href="{{ '/library/' | relative_url }}">Source library</a>
-        <a {% if page.url == '/journal/' or page.collection == 'posts' %}aria-current="page"{% endif %} href="{{ '/journal/' | relative_url }}">Journal</a>
-        <a {% if page.url == '/revisions/' %}aria-current="page"{% endif %} href="{{ '/revisions/' | relative_url }}">Revisions</a>
+        <a {% if page.url == '/' %}aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Topic brief</a>
+        <a {% if page.url == '/research/' %}aria-current="page"{% endif %} href="{{ '/research/' | relative_url }}">Full research</a>
+        <a {% if page.url == '/sources/' %}aria-current="page"{% endif %} href="{{ '/sources/' | relative_url }}">Sources</a>
+        <a {% if page.url == '/updates/' %}aria-current="page"{% endif %} href="{{ '/updates/' | relative_url }}">Updates</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">{{ content }}</main>
 
-  <footer class="site-footer">
-    <div class="shell footer-top">
-      <div>
-        <a class="footer-brand" href="{{ '/' | relative_url }}">{{ site.title | escape }}<span class="brand-mark-dot">.</span></a>
-        <p>{{ site.tagline | escape }}</p>
-      </div>
-      <div class="footer-links" aria-label="Footer navigation">
-        <a href="{{ '/methodology/' | relative_url }}">Methodology</a>
-        <a href="{{ '/revisions/' | relative_url }}">Corrections & revisions</a>
-        <a href="{{ '/library/' | relative_url }}">Research sources</a>
-      </div>
-    </div>
-    <div class="shell footer-bottom"><span>© {{ 'now' | date: '%Y' }} {{ site.author | escape }} · Original commentary unless otherwise indicated.</span><span>Built with GitHub Pages + Jekyll</span></div>
-  </footer>
+  <footer class="site-footer"><div class="shell footer-inner"><div><strong>{{ site.topic | escape }}</strong><p>Published {{ site.published_date | date: '%B %-d, %Y' }} · Updated {{ site.last_updated | date: '%B %-d, %Y' }}</p></div><div class="footer-links"><a href="{{ '/methodology/' | relative_url }}">Methodology</a><a href="{{ '/sources/' | relative_url }}">Source record</a></div></div><div class="shell footer-bottom">© {{ 'now' | date: '%Y' }} {{ site.author | escape }} · Built with GitHub Pages + Jekyll</div></footer>
 </body>
 </html>

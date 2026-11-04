@@ -1,24 +1,15 @@
 ---
 title: "EXAMPLE — An interpretive analysis"
 kind: "Analysis"
-type: analysis
 creator: "Author or organization (replace this)"
-added: 2026-11-02
-summary: "A sample record for an argument, scholarly article, expert commentary, or competing interpretation."
-source_url: ""
+source_date: 2026-10-28
+added: 2026-11-04
+source_url: "https://example.org/analysis"
+archive_url: ""
+summary: "A sample analysis added to the record after publication."
+commentary: "This source offers a competing interpretation worth preserving. Adding it to the record does not automatically mean the main article has changed."
+post_publication: true
 tags:
   - analysis
   - sample
 ---
-
-## Main argument
-
-Describe the author's thesis, not your judgment of the author.
-
-## Evidence cited
-
-Link to the documents and statistics on which the argument depends.
-
-## Strengths, limitations, and disagreements
-
-Explain what supports the argument, what remains uncertain, and which other interpretations are relevant.

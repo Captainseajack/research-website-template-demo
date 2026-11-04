@@ -1,40 +1,27 @@
 ---
 layout: article
 title: Methodology
-description: How sources, interpretations, and corrections are handled.
+description: How sources, interpretations, additions, and corrections are handled.
 permalink: /methodology/
-kicker: ABOUT THIS PROJECT
-heading_start: Research
-heading_em: methodology.
-lead: How the project keeps claims, sources, inferences, and revisions distinguishable.
-sticker_primary: HOW IT
-sticker_secondary: WORKS
-sticker_icon: ✳
+kicker: ABOUT THIS RESEARCH
 ---
 
-> **Template note:** Edit these practices to reflect what you actually do. Do not claim a procedure you have not followed.
+## Two levels of reading
 
-## The structure
+The [topic brief]({{ '/' | relative_url }}) gives a direct, plain-language explanation. The [full research article]({{ '/research/' | relative_url }}) contains the detailed argument, evidence, context, counterarguments, and limitations.
 
-This site contains a relatively stable [conclusions page]({{ '/conclusions/' | relative_url }}), a searchable [source library]({{ '/library/' | relative_url }}), a chronological [research journal]({{ '/journal/' | relative_url }}), and a [revision log]({{ '/revisions/' | relative_url }}).
+## Source record
 
-## Source categories
+The [sources page]({{ '/sources/' | relative_url }}) lists the materials used in the research. A source can be listed without commentary. When commentary is included, it represents the author’s note about the source and is visually identified as commentary.
 
-- **Primary documents:** Direct records such as legislation, transcripts, court filings, government datasets, or original statements.
-- **Reporting:** Journalism and other reporting on events or documents.
-- **Analysis:** Interpretive essays, expert commentary, scholarly analysis, or the project's own working interpretation.
-- **Other:** Material that does not fit a category cleanly, including social posts where their evidentiary role is specified.
+## Post-publication additions
 
-These categories describe what a source *is*, not a numerical judgment of its reliability.
+Relevant materials discovered after publication are marked as post-publication sources. They appear in both the complete source record and the [updates page]({{ '/updates/' | relative_url }}). Adding a source does not by itself mean the full article has been revised.
 
-## Claims and interpretation
+## Evidence and interpretation
 
-A source record should distinguish: (1) what the source directly establishes, (2) the author's interpretation, and (3) what remains uncertain or unverified. Whenever possible, provide an original URL, author, date, and sufficient context for independent checking.
-
-## Social posts
-
-Embedded posts can become unavailable or change visibility. Save the post URL, the posting date and author (when visible), and a short description of the claim or relevance. An X embed is not itself independent verification of its contents. External embeds may contact third-party services.
+Primary documents, reporting, data, and analysis serve different roles. The research should distinguish what a source directly establishes from the interpretation drawn from it, identify material uncertainty, and represent competing explanations fairly.
 
 ## Corrections
 
-Material corrections or changes to the main thesis are recorded in the [revision history]({{ '/revisions/' | relative_url }}), with dates and a description of the evidence or reasoning that prompted the change.
+When new evidence materially changes the article, revise the brief and full research, update the displayed modification date, and explain the change in the article where readers are likely to encounter the affected claim.
