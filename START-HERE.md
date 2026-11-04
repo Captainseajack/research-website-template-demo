@@ -23,9 +23,12 @@ Open `_config.yml` and replace:
 - `description`
 - `published_date`
 - `last_updated`
+- `topics_index_url`
 - `url` and `baseurl`
 
 Keep `demo: true` while example content remains. Change it to `false` when the real article and sources are ready.
+
+`topics_index_url` is the directory shared by every topic site. The template displays it as **All topics** in the header and footer.
 
 ### 2. Write the short article
 

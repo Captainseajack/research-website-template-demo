@@ -37,6 +37,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .main-nav { display: flex; align-self: stretch; gap: clamp(15px, 2.8vw, 35px); overflow-x: auto; }
 .main-nav a { display: flex; align-items: center; border-bottom: 3px solid transparent; color: var(--ink-soft); font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .main-nav a:hover, .main-nav a[aria-current='page'] { color: var(--teal-dark); border-color: var(--teal); }
+.main-nav .network-link { color: var(--teal-dark); }
 
 .kicker { margin: 0 0 16px; color: var(--teal-dark); font-size: 11px; font-weight: 850; letter-spacing: .17em; text-transform: uppercase; }
 .story-header, .article-header, .listing-header { max-width: 900px; padding: 66px 0 38px; border-bottom: 1px solid var(--line-dark); }

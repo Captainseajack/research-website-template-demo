@@ -24,12 +24,13 @@
         <a {% if page.url == '/research/' %}aria-current="page"{% endif %} href="{{ '/research/' | relative_url }}">Full research</a>
         <a {% if page.url == '/sources/' %}aria-current="page"{% endif %} href="{{ '/sources/' | relative_url }}">Sources</a>
         <a {% if page.url == '/updates/' %}aria-current="page"{% endif %} href="{{ '/updates/' | relative_url }}">Updates</a>
+        {% if site.topics_index_url and site.topics_index_url != '' %}<a class="network-link" href="{{ site.topics_index_url | escape }}">All topics</a>{% endif %}
       </nav>
     </div>
   </header>
 
   <main id="main-content">{{ content }}</main>
 
-  <footer class="site-footer"><div class="shell footer-inner"><div><strong>{{ site.topic | escape }}</strong><p>Published {{ site.published_date | date: '%B %-d, %Y' }} · Updated {{ site.last_updated | date: '%B %-d, %Y' }}</p></div><div class="footer-links"><a href="{{ '/methodology/' | relative_url }}">Methodology</a><a href="{{ '/sources/' | relative_url }}">Source record</a></div></div><div class="shell footer-bottom">© {{ 'now' | date: '%Y' }} {{ site.author | escape }} · Built with GitHub Pages + Jekyll</div></footer>
+  <footer class="site-footer"><div class="shell footer-inner"><div><strong>{{ site.topic | escape }}</strong><p>Published {{ site.published_date | date: '%B %-d, %Y' }} · Updated {{ site.last_updated | date: '%B %-d, %Y' }}</p></div><div class="footer-links">{% if site.topics_index_url and site.topics_index_url != '' %}<a href="{{ site.topics_index_url | escape }}">All topics</a>{% endif %}<a href="{{ '/methodology/' | relative_url }}">Methodology</a><a href="{{ '/sources/' | relative_url }}">Source record</a></div></div><div class="shell footer-bottom">© {{ 'now' | date: '%Y' }} {{ site.author | escape }} · Built with GitHub Pages + Jekyll</div></footer>
 </body>
 </html>

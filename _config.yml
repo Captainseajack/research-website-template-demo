@@ -8,6 +8,7 @@ author: "Your name"
 description: "A direct explanation of one public-policy question, with full research and an open source record."
 published_date: 2026-11-01
 last_updated: 2026-11-04
+topics_index_url: "https://captainseajack.github.io/"
 
 # Keep demo: true until you've replaced the example content.
 demo: true

@@ -20,6 +20,8 @@ The normal workflow is intentionally small. Edit `index.html` for the brief, edi
 - `templates/NEW-SOURCE.md` — copy this when adding a source.
 - `methodology.md` — explanation of the site’s research practices.
 
+`topics_index_url` in `_config.yml` controls the **All topics** link. Point every copied topic site to the same directory, normally `https://USERNAME.github.io/`.
+
 ## Adding a source
 
 Copy `templates/NEW-SOURCE.md` into `_sources/`, give it a unique filename, and change the metadata.
